@@ -21,14 +21,14 @@ img.onload = ()=>{
 
 
             
-            ctx.shadowOffsetX = (155-x)/5;
-            ctx.shadowOffsetY = (80-y)/5;
+            ctx.shadowOffsetX = (155-x)/8;
+            ctx.shadowOffsetY = (80-y)/8;
             ctx.shadowBlur = 5;
             ctx.shadowColor = 'rgba(0, 0, 0, 1)';
 
             ctx.fillStyle = '#606060';
             ctx.strokeStyle = 'rgba(40, 40, 40, 1)';
-            ctx.lineWidth = 2;
+            ctx.lineWidth = 3;
             ctx.strokeRect(105,55,100,50);
             ctx.fillRect(105,55,100,50);
 
