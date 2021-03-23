@@ -1,5 +1,5 @@
 const convas = document.getElementById('canvas');
-// const ctx = convas.getContext('2d');
+const ctx = convas.getContext('2d');
 
 
 // var rectangle = new Path2D();
@@ -23,7 +23,7 @@ const convas = document.getElementById('canvas');
 
 // ctx.stroke(triangle);
 
-var ctx = document.getElementById('canvas').getContext('2d');
+// var ctx = document.getElementById('canvas').getContext('2d');
 
 
 
@@ -52,19 +52,36 @@ var ctx = document.getElementById('canvas').getContext('2d');
 // ctx.fillStyle = radgrad;
 // ctx.fillRect(0, 0, 150, 150);
 
+// convas.addEventListener('mousemove', (e)=>{
+//     ctx.clearRect(0, 0, 400, 200)
+//     const img = new Image();
+//     img.src = 'https://i.pinimg.com/236x/00/c5/34/00c534c781c2ea7a2828206902d208cf.jpg';
+//     const pattern = ctx.createPattern(img, 'repeat')
+//     ctx.fillStyle = pattern;
+//     ctx.fillRect(0, 0, 400, 200);
+
+//     const radgrad = ctx.createRadialGradient(e.offsetX, e.offsetY, 10, 200, 100, 250);
+//     radgrad.addColorStop(0, 'rgba(0,0,0,0.1)');
+//     // radgrad.addColorStop(0.94, '#019F62');
+//     radgrad.addColorStop(0.3, 'black');
+//     ctx.fillStyle = radgrad;
+//     ctx.fillRect(0, 0, 400, 200);
+
+// })
+
 convas.addEventListener('mousemove', (e)=>{
-    ctx.clearRect(0, 0, 400, 200)
-    const img = new Image();
-    img.src = 'https://i.pinimg.com/236x/00/c5/34/00c534c781c2ea7a2828206902d208cf.jpg';
-    const pattern = ctx.createPattern(img, 'repeat')
-    ctx.fillStyle = pattern;
-    ctx.fillRect(0, 0, 400, 200);
-
-    const radgrad = ctx.createRadialGradient(e.offsetX, e.offsetY, 10, 200, 100, 250);
-    radgrad.addColorStop(0, 'rgba(0,0,0,0.1)');
-    // radgrad.addColorStop(0.94, '#019F62');
-    radgrad.addColorStop(0.3, 'black');
-    ctx.fillStyle = radgrad;
-    ctx.fillRect(0, 0, 400, 200);
-
+    const x = e.offsetX;
+    const y = e.offsetY;
+    
+    ctx.clearRect(0,0,400,200);
+    ctx.shadowOffsetX = (155-x)/5
+    ctx.shadowOffsetY = (80-y)/5
+    ctx.shadowBlur = 5
+    ctx.shadowColor = 'rgba(0, 0, 0, 1)';
+    
+    
+    ctx.fillStyle = 'blue'
+    
+    ctx.fillRect(105,55,100,50)
 })
+
